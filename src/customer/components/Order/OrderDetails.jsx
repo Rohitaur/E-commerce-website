@@ -1,0 +1,53 @@
+import React from 'react'
+import AddressCard from '../AddressCard/AddressCard'
+import OrderTraker from './OrderTraker'
+import { Box, Grid } from '@mui/material'
+import { deepPurple } from '@mui/material/colors'
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+
+const OrderDetails = () => {
+  return (
+    <div className='px-5 lg:px-20'>
+        <div>
+            <h1 className='font-bold text-xl py-7'>Delivery Address</h1>
+            <AddressCard />
+        </div>
+  
+        <div className='py-20'>
+            <OrderTraker activeStep={3} />
+        </div>
+
+        <Grid className='space-y-5' container>
+            {[1,1,1,1,1].map((item)=> <Grid item container className='shadow-xl rounded-md p-5 border' sx={{alignItems:"center", justifyContent:"space-between"}}>
+
+<Grid item xs={6}>
+<div className='flex items-center space-x-4'>
+<img className='w-[5rem] h-[5rem] object-cover object-top'  src='data:image/jpeg;base64,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' alt='' />
+<div className='space-y-2 ml-5'>
+<p className='font-semibold'>Men Slim Mid Rise Black Jeans</p>
+<p className='space-x-5 opacity-50 text-xs font-semibold'>
+    <span>Color: pink</span>
+    <span>Size: M</span>
+</p>
+<p>Seller: linaria</p>
+<p>₹1099</p>
+</div>
+</div>
+</Grid>
+
+
+<Grid item>
+<Box sx={{ color: deepPurple[500] }}>
+<StarBorderIcon sx={{ fontSize: "2rem" }} className='px-2 text-5xl' />
+<span>Rate & Review Product</span>
+</Box>
+</Grid>
+
+</Grid>)}
+           
+        </Grid>
+    </div>
+  )
+}
+
+export default OrderDetails;

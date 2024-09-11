@@ -1,0 +1,15 @@
+/* Add smooth transition to the text part */
+.productCard .textPart {
+    transition: transform 0.3s ease-out;
+}
+
+/* On hover, move the text part up */
+.productCard:hover .textPart {
+    transform: translateY(-1rem);
+}
+
+/* On hover, apply a shadow effect to the product card */
+.productCard:hover {
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
+    transition: box-shadow 0.3s ease-out; /* Optional: smooth shadow effect */
+}
